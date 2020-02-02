@@ -288,9 +288,9 @@ public class FarmMenu {
 			System.out.println("잘못 입력하였습니다. 다시 입력해주세요");
 			removeFarm();
 		}
-		if(fc.removeFarm(f)) {
+		if (fc.removeFarm(f)) {
 			System.out.println("구매 취소에 성공하였습니다.");
-		}else {
+		} else {
 			System.out.println("구매 취소에 실패하였습니다.");
 		}
 		customerMenu();
@@ -300,9 +300,13 @@ public class FarmMenu {
 	public void printBuyFarm() {
 //	fc의 printBuyFarm()의 반환 값을 이용하여 Iterator를 통해 출력
 		Iterator<Farm> it = fc.printBuyFarm().iterator();
-		while (it.hasNext()) {
-			Farm f = it.next();
-			System.out.println(f);
+		if (!it.hasNext()) {
+			System.out.println("담은 물건이 없습니다.");
+		} else {
+			while (it.hasNext()) {
+				Farm f = it.next();
+				System.out.println(f);
+			}
 		}
 		customerMenu();
 	}

@@ -68,6 +68,13 @@ public class FarmController {
 			return list.add(f);
 		}
 		return false;
+		// list로 이루어져 있기 때문에 중복값을 허용하므로 배를 계속해서 사면
+		// list에서는 equals
+		// 과일: 배
+		// 과일: 배
+		// 과일: 배
+		// 과일: 배
+		// 연속적으로 값이 들어감 
 	}
 
 	public boolean removeFarm(Farm f) {
