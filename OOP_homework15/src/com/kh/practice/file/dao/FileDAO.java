@@ -1,6 +1,7 @@
 package com.kh.practice.file.dao;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -9,7 +10,9 @@ public class FileDAO {
 	public boolean checkName(String file) {
 		try (FileReader fr = new FileReader(file);) {
 			return true;
-		} catch (IOException e) {
+		} catch (FileNotFoundException e) {
+			return false;
+		} catch (IOException e1) {
 			return false;
 		}
 	}
